@@ -1,0 +1,14 @@
+name: architecture-test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: TODO-org/ai-in-sdlc-assignment
+          path: ../ai-in-sdlc-assignment
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: '8.0.x' }
+      - run: dotnet test tests/ArchitectureTests

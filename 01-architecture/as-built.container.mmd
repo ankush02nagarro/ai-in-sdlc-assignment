@@ -1,0 +1,11 @@
+%% AS-BUILT container view: fill from the code, not from ops/README.md
+%% Every node needs a citation id (C1, C2...) listed in citations.md
+flowchart LR
+  user([Approver / API client])
+  subgraph app[Invoice Approval API - ASP.NET Core 8]
+    ctrl[Approval controller<br/>C1: TODO file/symbol]
+    svc[Approval service<br/>C2: TODO file/symbol]
+    store[(In-memory store<br/>C3: TODO file/symbol)]
+  end
+  user -->|HTTP| ctrl --> svc --> store
+  %% Do NOT draw: SQL, Service Bus, PayEx. They do not exist yet.

@@ -1,0 +1,12 @@
+%% AS-BUILT sequence: the approval path. Cite each message (S1, S2...)
+sequenceDiagram
+  actor U as Approver
+  participant C as Controller (S1: TODO)
+  participant S as ApprovalService (S2: TODO)
+  participant M as InMemoryStore (S3: TODO)
+  U->>C: POST approve (TODO route)
+  C->>S: Approve(id, user) (TODO)
+  S->>M: load / update status (TODO)
+  M-->>S: result
+  S-->>C: result
+  C-->>U: 200 / error (TODO)
