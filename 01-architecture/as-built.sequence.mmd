@@ -5,10 +5,10 @@ sequenceDiagram
   participant C as ApprovalsController
   participant S as ApprovalService
   participant M as InMemoryInvoiceRepository
-  U->>MW: POST /api/approvals/invoiceId/approve - S1
-  MW->>C: session set; RequireRole Approver or Admin - S2
-  C->>S: Approve invoiceId, username - S3
-  S->>M: GetById then Update status=Approved - S4
+  U->>MW: POST api/approvals/invoiceId/approve S1
+  MW->>C: session set then RequireRole Approver or Admin S2
+  C->>S: Approve invoiceId and username S3
+  S->>M: GetById then Update status Approved S4
   M-->>S: invoice
   S-->>C: invoice
-  C-->>U: 200 OK / 404 / 409 via Handle - S5
+  C-->>U: 200 OK or 404 or 409 via Handle S5
