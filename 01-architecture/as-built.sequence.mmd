@@ -1,14 +1,14 @@
-%% AS-BUILT sequence: the approval path. Cite each message (S1–S5)
+%% AS-BUILT sequence: the approval path. Cite each message S1-S5
 sequenceDiagram
   actor U as Approver
   participant MW as SessionAuthMiddleware
   participant C as ApprovalsController
   participant S as ApprovalService
   participant M as InMemoryInvoiceRepository
-  U->>MW: POST /api/approvals/{invoiceId}/approve (S1)
-  MW->>C: session set; RequireRole Approver|Admin (S2)
-  C->>S: Approve(invoiceId, username) (S3)
-  S->>M: GetById then Update status=Approved (S4)
+  U->>MW: POST /api/approvals/invoiceId/approve - S1
+  MW->>C: session set; RequireRole Approver or Admin - S2
+  C->>S: Approve invoiceId, username - S3
+  S->>M: GetById then Update status=Approved - S4
   M-->>S: invoice
   S-->>C: invoice
-  C-->>U: 200 OK / 404 / 409 via Handle (S5)
+  C-->>U: 200 OK / 404 / 409 via Handle - S5
