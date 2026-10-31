@@ -1,28 +1,50 @@
+using System;
+using System.Reflection;
+using InvoiceApp.Domain;
 using NetArchTest.Rules;
 using Xunit;
 
 namespace ArchitectureTests;
 
-/// ONE structural rule, encoded as a test that runs.
-/// Default rule: controllers must not touch the store directly; they go through the service.
-/// Replace the TODO names after reading the real code (cite them in 01-architecture/citations.md).
-/// Pick the rule that PayEx/persistence will most easily violate (e.g. nothing outside the
-/// submission worker may reference the PayEx client).
+/// Rule: InvoiceApp.Domain (approval rules) must not depend on the web host or on any I/O client.
+/// PayEx (HTTP), Azure SQL (EF Core / SqlClient) and Service Bus are planned (ops/); when they land they
+/// belong in an adapter behind an interface (as IInvoiceRepository already is), never inside ApprovalService.
+/// INC-2041 is the failure this guards: a synchronous PayEx call wired straight into the approve path.
 public class StructuralRuleTests
 {
-    // TODO: any type from the assembly under test
-    private static readonly System.Reflection.Assembly Api =
-        typeof(Program).Assembly;
+    private static readonly Assembly Domain = typeof(ApprovalService).Assembly;
+    private static readonly Assembly Api = typeof(InvoiceApp.Api.InMemoryInvoiceRepository).Assembly;
+
+    private static readonly string[] Forbidden =
+    {
+        "InvoiceApp.Api",
+        "Microsoft.AspNetCore",
+        "System.Net.Http",
+        "Microsoft.EntityFrameworkCore",
+        "Microsoft.Data.SqlClient",
+        "Azure.Messaging.ServiceBus",
+    };
+
+    private static TestResult DomainRule(Assembly assembly) =>
+        Types.InAssembly(assembly)
+            .ShouldNot().HaveDependencyOnAny(Forbidden)
+            .GetResult();
 
     [Fact]
-    public void Controllers_must_not_depend_on_the_store_directly()
+    public void Domain_must_not_depend_on_web_host_or_io_clients()
     {
-        var result = Types.InAssembly(Api)
-            .That().HaveNameEndingWith("Controller")
-            .ShouldNot().HaveDependencyOn("TODO.Namespace.Of.Store") // TODO
-            .GetResult();
+        var result = DomainRule(Domain);
 
         Assert.True(result.IsSuccessful,
             "Violations: " + string.Join(", ", result.FailingTypeNames ?? Array.Empty<string>()));
+    }
+
+    [Fact]
+    public void Rule_detects_violations_when_they_exist()
+    {
+        var result = DomainRule(Api);
+
+        Assert.False(result.IsSuccessful);
+        Assert.Contains(result.FailingTypeNames!, n => n.EndsWith(".ApprovalsController"));
     }
 }

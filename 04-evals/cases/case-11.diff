@@ -1,0 +1,32 @@
+diff --git a/backend/src/InvoiceApp.Api/Clients/PayExClient.cs b/backend/src/InvoiceApp.Api/Clients/PayExClient.cs
+--- a/backend/src/InvoiceApp.Api/Clients/PayExClient.cs
++++ b/backend/src/InvoiceApp.Api/Clients/PayExClient.cs
+@@ -18,12 +18,29 @@ public class PayExClient : IPayExClient
+     public async Task<PayExReceipt> SubmitAsync(Invoice invoice, CancellationToken ct = default)
+     {
+-        var response = await _http.PostAsJsonAsync("/v2/payments", Map(invoice), ct);
+-        response.EnsureSuccessStatusCode();
+-
+-        return await response.Content.ReadFromJsonAsync<PayExReceipt>(cancellationToken: ct)
+-               ?? throw new InvalidOperationException("PayEx returned an empty receipt.");
++        const int maxAttempts = 3;
++
++        for (var attempt = 1; ; attempt++)
++        {
++            try
++            {
++                var response = await _http.PostAsJsonAsync("/v2/payments", Map(invoice), ct);
++                response.EnsureSuccessStatusCode();
++
++                return await response.Content.ReadFromJsonAsync<PayExReceipt>(cancellationToken: ct)
++                       ?? throw new InvalidOperationException("PayEx returned an empty receipt.");
++            }
++            catch (Exception ex) when (attempt < maxAttempts &&
++                                       (ex is TaskCanceledException || ex is HttpRequestException))
++            {
++                _logger.LogWarning(ex, "PayEx submit attempt {Attempt} for {InvoiceId} failed; retrying",
++                    attempt, invoice.Id);
++                await Task.Delay(TimeSpan.FromSeconds(2 * attempt), ct);
++            }
++        }
+     }
