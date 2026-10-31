@@ -1,0 +1,7 @@
+sha,committed_at,first_green_at,hours,subject
+0616158bdd73,2026-10-12T10:20:35Z,2026-10-14T09:41:35+00:00,47.4,"Add Session 3 operations material: incident packs, CI pipeline and review evals"
+38349139003e,2026-10-05T10:20:47Z,2026-10-14T09:41:35+00:00,215.3,Add Playwright e2e setup and coverage collector
+442196833789,2026-10-05T10:19:03Z,2026-10-14T09:41:35+00:00,215.4,"Add tests, CI, agent conventions and use-case briefs"
+8214bc4ecd46,2026-10-05T10:19:03Z,2026-10-14T09:41:35+00:00,215.4,Add web UI for invoices and approvals
+dc182d9ccfa8,2026-10-05T10:19:03Z,2026-10-14T09:41:35+00:00,215.4,"Add API: sign-in, invoices and approvals endpoints"
+754f6a12a636,2026-10-05T10:19:03Z,2026-10-14T09:41:35+00:00,215.4,Add domain: invoice lifecycle and discount rules

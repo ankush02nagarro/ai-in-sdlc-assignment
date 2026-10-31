@@ -1,20 +1,21 @@
 %% TARGET state. Dashed / "NOT BUILT" = does not exist in the repo today
 flowchart LR
   user([Approver])
-  subgraph app[Invoice Approval API - EXISTS]
-    ctrl[Controller]
-    svc[Approval service]
+  subgraph app[Invoice Approval API - EXISTS today]
+    ctrl[ApprovalsController]
+    svc[ApprovalService]
   end
   db[(Azure SQL<br/>NOT BUILT)]:::missing
-  outbox[(Outbox / dedupe table<br/>NOT BUILT)]:::missing
+  outbox[(Outbox + dedupe table<br/>NOT BUILT)]:::missing
   worker[Submission worker<br/>NOT BUILT]:::missing
-  sb[[Azure Service Bus<br/>provisioned, unused]]:::missing
-  payex{{PayEx<br/>external, 30s timeout}}:::missing
+  sb[[Azure Service Bus<br/>planned in ops/, unused in code]]:::missing
+  payex{{PayEx HTTP<br/>external, 30s timeout<br/>NOT BUILT}}:::missing
   audit[(Audit log, 7-yr retention<br/>NOT BUILT)]:::missing
   user --> ctrl --> svc
-  svc -.-> db
-  svc -.-> outbox
-  svc -.-> audit
-  outbox -.-> worker -.-> payex
-  worker -.-> sb
+  svc -.->|persist invoice| db
+  svc -.->|same txn: outbox row| outbox
+  svc -.->|approval decision| audit
+  outbox -.-> worker
+  worker -.->|idempotent submit| payex
+  worker -.->|invoice.approved event| sb
   classDef missing stroke-dasharray: 5 5,fill:#fff3cd,stroke:#b58900;

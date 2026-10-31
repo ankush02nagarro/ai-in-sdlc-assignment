@@ -1,0 +1,3 @@
+2026-10-31T15:11:40.610449+00:00
+repo=C:\DocX\NAGP\Ai in SDLC\ai-in-sdlc-submission\ai-in-sdlc-assignment
+slug=NITIN1670/ai-in-sdlc-assignment

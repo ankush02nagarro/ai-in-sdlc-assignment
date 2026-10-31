@@ -9,31 +9,50 @@ Senior-engineer deliverables for the **Invoice Approval service** (tier-2 go-liv
 
 | # | Deliverable | Location | Status |
 |---|-------------|----------|--------|
-| 1 | Mermaid as-built + target diagrams, citation list, inferred-items list | `01-architecture/` | ☐ |
-| 2 | One architecture test + the command that runs it | `tests/ArchitectureTests/` | ☐ |
-| 3 | Exactly-once decision record (incl. *Where the agent was wrong or useless*) | `02-decision-record/ADR-001-exactly-once-submission.md` | ☐ |
-| 4 | One-page autonomy policy, day-one level stated | `03-autonomy-policy/autonomy-policy.md` | ☐ |
-| 5 | Two added eval cases + results table (3 runs + changed-variable run) | `04-evals/` | ☐ |
-| 6 | Risk audit (lethal trifecta) with decision recorded | `05-risk-and-measurement/risk-audit.md` | ☐ |
-| 7 | Measurement plan + two captured numbers | `05-risk-and-measurement/measurement-plan.md` | ☐ |
-| 8 | 8–10 min demo video, uploaded and linked | `06-demo/README.md` | ☐ |
-| 9 | AI augmentation logs | `ai-augmentation-logs/` | ☐ |
+| 1 | Mermaid as-built + target diagrams, citation list, inferred-items list | `01-architecture/` | ☑ |
+| 2 | One architecture test + the command that runs it | `tests/ArchitectureTests/` | ☑ |
+| 3 | Exactly-once decision record (incl. *Where the agent was wrong or useless*) | `02-decision-record/ADR-001-exactly-once-submission.md` | ☑ |
+| 4 | One-page autonomy policy, day-one level stated | `03-autonomy-policy/autonomy-policy.md` | ☑ |
+| 5 | Two added eval cases + results table (3 runs + changed-variable run) | `04-evals/` | ☑ |
+| 6 | Risk audit (lethal trifecta) with decision recorded | `05-risk-and-measurement/risk-audit.md` | ☑ |
+| 7 | Measurement plan + two captured numbers | `05-risk-and-measurement/measurement-plan.md` | ☑ |
+| 8 | 8–10 min demo video, uploaded and linked | `06-demo/README.md` | ☐ paste link after you record |
+| 9 | AI augmentation logs | `ai-augmentation-logs/` | ☑ |
+
+## Install / setup (Windows)
+
+1. **Git**, **.NET 8 SDK**, **Python 3.11+** on PATH (`dotnet --version`, `python --version`).
+2. Parent folder layout:
+   ```text
+   ai-in-sdlc-submission/          ← this repo (your hand-in)
+   ai-in-sdlc-assignment/          ← clone of the workshop codebase
+   ```
+3. Clone the codebase next to this repo if missing:
+   ```powershell
+   cd "c:\DocX\NAGP\Ai in SDLC\ai-in-sdlc-submission"
+   git clone https://github.com/NITIN1670/ai-in-sdlc-assignment.git
+   ```
+4. Optional: `gh` + `jq` + bash/WSL — not required; use `capture_baseline.py` instead of the `.sh` script.
 
 ## Run the one test that matters
-```bash
+```powershell
+cd ai-in-sdlc-submission
 dotnet test tests/ArchitectureTests --logger "console;verbosity=normal"
 ```
-(See `tests/ArchitectureTests/README.md` for the one-time setup of the project reference.)
+See `tests/ArchitectureTests/README.md` and `proof-of-run.md`.
 
 ## Run the eval summary
-```bash
-python3 04-evals/summarize.py 04-evals/results/runs.csv
+```powershell
+python 04-evals\summarize.py 04-evals\results\runs.csv
 ```
 
 ## Capture the baseline
-```bash
-bash 05-risk-and-measurement/scripts/capture_baseline.sh /path/to/ai-in-sdlc-assignment
+```powershell
+python 05-risk-and-measurement\scripts\capture_baseline.py ..\ai-in-sdlc-assignment NITIN1670/ai-in-sdlc-assignment
 ```
+
+## Demo
+Read-aloud script and commands: [`06-demo/README.md`](06-demo/README.md). Record 8–10 min; paste the link there; do not commit the MP4.
 
 ## Working rules
 - Every claim in a diagram cites a file or symbol, or goes in `inferred-items.md`.

@@ -1,0 +1,4 @@
+LEAD_TIME: proxy=commit_to_first_main_CI_green n=6 median=215.4h min=47.4h max=215.4h note=0_PRs_so_PR_lead_time_undefined
+CHANGE_FAILURE_GITHUB: github_actions runs=1 failed=0 failure_rate=0.0% revert_commits=0 hotfix_commits=0
+CHANGE_FAILURE_OPS: ops_run_timings main_push_runs=8 failed=0 failure_rate=0.0%
+REVIEW_TURNAROUND: pull_requests=0 review_turnaround=n/a (zero PRs)
