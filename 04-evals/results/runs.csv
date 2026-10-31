@@ -1,73 +1,73 @@
 variant,run,case_id,label,flagged_correctly,model,noise_on_clean,finding_summary
-v1,1,case-01,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
-v1,1,case-02,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,SQL injection via customer and status
-v1,1,case-03,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
-v1,1,case-04,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; pure rename
-v1,1,case-05,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
-v1,1,case-06,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",1,"No defect in test logic | noise: hunk header counts wrong (true of artefact, not code)"
-v1,1,case-07,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
-v1,1,case-08,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
-v1,1,case-09,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",1,appsettings fine | noise: README sign-out reset claim 'probable defect' (medium)
-v1,1,case-10,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
-v1,1,case-11,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
-v1,1,case-12,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
-v1,2,case-01,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
-v1,2,case-02,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,SQL injection via customer and status
-v1,2,case-03,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
-v1,2,case-04,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; pure rename
-v1,2,case-05,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
-v1,2,case-06,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",1,"No defect in test logic | noise: hunk header counts wrong, 'definite defect'"
-v1,2,case-07,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
-v1,2,case-08,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
-v1,2,case-09,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",1,appsettings fine | noise: README sign-out reset claim 'likely defect' (medium)
-v1,2,case-10,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
-v1,2,case-11,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
-v1,2,case-12,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
-v1,3,case-01,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
-v1,3,case-02,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,SQL injection via customer and status
-v1,3,case-03,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
-v1,3,case-04,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; pure rename
-v1,3,case-05,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
-v1,3,case-06,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",1,No defect in test logic | noise: hunk header counts wrong
-v1,3,case-07,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
-v1,3,case-08,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
-v1,3,case-09,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",1,appsettings fine | noise: README sign-out reset claim 'likely defect' (medium)
-v1,3,case-10,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
-v1,3,case-11,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
-v1,3,case-12,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
-v2,1,case-01,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
-v2,1,case-02,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,SQL injection via customer and status
-v2,1,case-03,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
-v2,1,case-04,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; pure rename
-v2,1,case-05,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
-v2,1,case-06,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",1,No defect in test logic | noise: hunk header counts wrong (medium)
-v2,1,case-07,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
-v2,1,case-08,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
-v2,1,case-09,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",1,appsettings fine | noise: README claim 'possible documentation defect' (low-medium)
-v2,1,case-10,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
-v2,1,case-11,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
-v2,1,case-12,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
-v2,2,case-01,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
-v2,2,case-02,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,SQL injection via customer and status
-v2,2,case-03,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
-v2,2,case-04,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; pure rename
-v2,2,case-05,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
-v2,2,case-06,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defect in test logic
-v2,2,case-07,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
-v2,2,case-08,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
-v2,2,case-09,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,appsettings fine
-v2,2,case-10,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
-v2,2,case-11,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
-v2,2,case-12,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
-v2,3,case-01,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
-v2,3,case-02,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,SQL injection via customer and status
-v2,3,case-03,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
-v2,3,case-04,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; pure rename
-v2,3,case-05,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
-v2,3,case-06,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defect in test logic
-v2,3,case-07,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
-v2,3,case-08,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
-v2,3,case-09,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,appsettings fine
-v2,3,case-10,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
-v2,3,case-11,defective,1,"claude-opus-5.5 (cursor subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
-v2,3,case-12,clean,0,"claude-opus-5.5 (cursor subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
+v1,1,case-01,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
+v1,1,case-02,defective,1,"claude-opus-5.5 (subagent, inherit)",0,SQL injection via customer and status
+v1,1,case-03,defective,1,"claude-opus-5.5 (subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
+v1,1,case-04,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; pure rename
+v1,1,case-05,defective,1,"claude-opus-5.5 (subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
+v1,1,case-06,clean,0,"claude-opus-5.5 (subagent, inherit)",1,"No defect in test logic | noise: hunk header counts wrong (true of artefact, not code)"
+v1,1,case-07,defective,1,"claude-opus-5.5 (subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
+v1,1,case-08,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
+v1,1,case-09,clean,0,"claude-opus-5.5 (subagent, inherit)",1,appsettings fine | noise: README sign-out reset claim 'probable defect' (medium)
+v1,1,case-10,defective,1,"claude-opus-5.5 (subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
+v1,1,case-11,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
+v1,1,case-12,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
+v1,2,case-01,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
+v1,2,case-02,defective,1,"claude-opus-5.5 (subagent, inherit)",0,SQL injection via customer and status
+v1,2,case-03,defective,1,"claude-opus-5.5 (subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
+v1,2,case-04,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; pure rename
+v1,2,case-05,defective,1,"claude-opus-5.5 (subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
+v1,2,case-06,clean,0,"claude-opus-5.5 (subagent, inherit)",1,"No defect in test logic | noise: hunk header counts wrong, 'definite defect'"
+v1,2,case-07,defective,1,"claude-opus-5.5 (subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
+v1,2,case-08,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
+v1,2,case-09,clean,0,"claude-opus-5.5 (subagent, inherit)",1,appsettings fine | noise: README sign-out reset claim 'likely defect' (medium)
+v1,2,case-10,defective,1,"claude-opus-5.5 (subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
+v1,2,case-11,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
+v1,2,case-12,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
+v1,3,case-01,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
+v1,3,case-02,defective,1,"claude-opus-5.5 (subagent, inherit)",0,SQL injection via customer and status
+v1,3,case-03,defective,1,"claude-opus-5.5 (subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
+v1,3,case-04,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; pure rename
+v1,3,case-05,defective,1,"claude-opus-5.5 (subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
+v1,3,case-06,clean,0,"claude-opus-5.5 (subagent, inherit)",1,No defect in test logic | noise: hunk header counts wrong
+v1,3,case-07,defective,1,"claude-opus-5.5 (subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
+v1,3,case-08,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
+v1,3,case-09,clean,0,"claude-opus-5.5 (subagent, inherit)",1,appsettings fine | noise: README sign-out reset claim 'likely defect' (medium)
+v1,3,case-10,defective,1,"claude-opus-5.5 (subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
+v1,3,case-11,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
+v1,3,case-12,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
+v2,1,case-01,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
+v2,1,case-02,defective,1,"claude-opus-5.5 (subagent, inherit)",0,SQL injection via customer and status
+v2,1,case-03,defective,1,"claude-opus-5.5 (subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
+v2,1,case-04,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; pure rename
+v2,1,case-05,defective,1,"claude-opus-5.5 (subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
+v2,1,case-06,clean,0,"claude-opus-5.5 (subagent, inherit)",1,No defect in test logic | noise: hunk header counts wrong (medium)
+v2,1,case-07,defective,1,"claude-opus-5.5 (subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
+v2,1,case-08,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
+v2,1,case-09,clean,0,"claude-opus-5.5 (subagent, inherit)",1,appsettings fine | noise: README claim 'possible documentation defect' (low-medium)
+v2,1,case-10,defective,1,"claude-opus-5.5 (subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
+v2,1,case-11,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
+v2,1,case-12,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
+v2,2,case-01,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
+v2,2,case-02,defective,1,"claude-opus-5.5 (subagent, inherit)",0,SQL injection via customer and status
+v2,2,case-03,defective,1,"claude-opus-5.5 (subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
+v2,2,case-04,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; pure rename
+v2,2,case-05,defective,1,"claude-opus-5.5 (subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
+v2,2,case-06,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defect in test logic
+v2,2,case-07,defective,1,"claude-opus-5.5 (subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
+v2,2,case-08,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
+v2,2,case-09,clean,0,"claude-opus-5.5 (subagent, inherit)",0,appsettings fine
+v2,2,case-10,defective,1,"claude-opus-5.5 (subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
+v2,2,case-11,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
+v2,2,case-12,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard
+v2,3,case-01,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Null Ids -> NullReferenceException/500; partial batch on mid-loop failure
+v2,3,case-02,defective,1,"claude-opus-5.5 (subagent, inherit)",0,SQL injection via customer and status
+v2,3,case-03,defective,1,"claude-opus-5.5 (subagent, inherit)",0,ToZero truncates discount -> customer over-charged 0.01 (worked example given)
+v2,3,case-04,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; pure rename
+v2,3,case-05,defective,1,"claude-opus-5.5 (subagent, inherit)",0,"Delete missing [RequireRole(""Admin"")]; bypasses Handle()"
+v2,3,case-06,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defect in test logic
+v2,3,case-07,defective,1,"claude-opus-5.5 (subagent, inherit)",0,{@Session}/{@Invoice} destructured into logs (PII/session data)
+v2,3,case-08,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Dictionary not thread-safe in singleton; ContainsKey/insert race
+v2,3,case-09,clean,0,"claude-opus-5.5 (subagent, inherit)",0,appsettings fine
+v2,3,case-10,defective,1,"claude-opus-5.5 (subagent, inherit)",0,catch(Exception) returns 200 completed; swallows failures
+v2,3,case-11,defective,1,"claude-opus-5.5 (subagent, inherit)",0,Non-idempotent payment POST retried on timeout -> duplicate payment
+v2,3,case-12,clean,0,"claude-opus-5.5 (subagent, inherit)",0,No defects; Trim after IsNullOrWhiteSpace guard

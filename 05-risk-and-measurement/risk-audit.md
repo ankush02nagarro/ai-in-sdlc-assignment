@@ -1,7 +1,7 @@
 # Risk audit: agent setup for this service
 
 ## Setup (summarise in 3 lines)
-`ops/README.md` has **no** agent-setup section at the end (it ends at “No answers here”). The **actual** agent setup in the assignment repo is: Cursor/Claude guided by `AGENTS.md` / `CLAUDE.md`, plus Playwright MCP from `.mcp.json` (`npx @playwright/mcp@latest`). Incident work (INC-2047) additionally assumes humans run read-only `az`/log queries whose output includes supplier emails and untrusted notification text.
+`ops/README.md` has **no** agent-setup section at the end (it ends at “No answers here”). The **actual** agent setup in the assignment repo is: Claude guided by `AGENTS.md` / `CLAUDE.md`, plus Playwright MCP from `.mcp.json` (`npx @playwright/mcp@latest`). Incident work (INC-2047) additionally assumes humans run read-only `az`/log queries whose output includes supplier emails and untrusted notification text.
 
 ## Lethal trifecta
 | Leg | Present? | Evidence |

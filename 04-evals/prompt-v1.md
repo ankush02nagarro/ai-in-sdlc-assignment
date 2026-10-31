@@ -1,5 +1,5 @@
 # Review prompt v1 (baseline)
-Model: Claude Opus 5.5 (Cursor subagent, `generalPurpose`, model `inherit`). Context file: none. The reviewer gets only the diff and the prompt. Date: 2026-10-31
+Model: Claude Opus 5.5 (`generalPurpose` subagent, model `inherit`). Context file: none. The reviewer gets only the diff and the prompt. Date: 2026-10-31
 
 The prompt is copied verbatim from `ops/evals/README.md` in `ai-in-sdlc-assignment`:
 

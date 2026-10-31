@@ -3,7 +3,7 @@
 Generated with `python 04-evals/summarize.py 04-evals/results/runs.csv` (raw output in `summary-output.txt`).
 Every row in `runs.csv` is one fresh reviewer session (see `session-ids.md`). Scoring follows `../answer-key.md`, which was fixed before the first run.
 
-Setup: model Claude Opus 5.5 (Cursor subagent), no tools, no context file, diff plus prompt only.
+Setup: model Claude Opus 5.5 (subagent), no tools, no context file, diff plus prompt only.
 v1 is the `ops/evals` prompt verbatim. v2 changes **only the prompt**: it adds a concrete-failure bar and a checklist (`../prompt-v2.md`).
 Cases: the 10 cases from `ops/evals`, plus `case-11` (defective, mine) and `case-12` (clean, mine). That gives 8 defective and 4 clean.
 

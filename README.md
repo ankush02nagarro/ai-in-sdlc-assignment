@@ -1,5 +1,7 @@
 # AI in SDLC Workshop: Submission
 
+**Demo video:** https://nagarro-my.sharepoint.com/:v:/p/ankush02/IQBBbioJoOEKRKv-riBAW0DsAfl2qGmN7la37FBDJTL2QeQ?e=t5CJsJ
+
 Senior-engineer deliverables for the **Invoice Approval service** (tier-2 go-live in January; PayEx integration).
 
 > Target codebase: `ai-in-sdlc-assignment`. Check it out **next to** this repo (or add as a git submodule under `./code`).
@@ -16,7 +18,7 @@ Senior-engineer deliverables for the **Invoice Approval service** (tier-2 go-liv
 | 5 | Two added eval cases + results table (3 runs + changed-variable run) | `04-evals/` | ☑ |
 | 6 | Risk audit (lethal trifecta) with decision recorded | `05-risk-and-measurement/risk-audit.md` | ☑ |
 | 7 | Measurement plan + two captured numbers | `05-risk-and-measurement/measurement-plan.md` | ☑ |
-| 8 | 8–10 min demo video, uploaded and linked | `06-demo/README.md` | ☐ paste link after you record |
+| 8 | 8–10 min demo video, uploaded and linked | `06-demo/README.md` | ☑ |
 | 9 | AI augmentation logs | `ai-augmentation-logs/` | ☑ |
 
 ## Install / setup (Windows)
@@ -52,7 +54,9 @@ python 05-risk-and-measurement\scripts\capture_baseline.py ..\ai-in-sdlc-assignm
 ```
 
 ## Demo
-Read-aloud script and commands: [`06-demo/README.md`](06-demo/README.md). Record 8–10 min; paste the link there; do not commit the MP4.
+https://nagarro-my.sharepoint.com/:v:/p/ankush02/IQBBbioJoOEKRKv-riBAW0DsAfl2qGmN7la37FBDJTL2QeQ?e=t5CJsJ
+
+Also in [`06-demo/README.md`](06-demo/README.md).
 
 ## Working rules
 - Every claim in a diagram cites a file or symbol, or goes in `inferred-items.md`.
